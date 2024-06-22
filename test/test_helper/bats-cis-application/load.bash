@@ -69,3 +69,9 @@ function is_app_masked(){
     # 0 = true // 1 = false
     return $is
 }
+
+# function is_sudo_log_file_exists is used to check if a sudo log file exists
+function is_sudo_log_file_exists(){
+    # 0 = true // 1 = false
+    return $(grep -rPqsi "^\h*Defaults\h+([^#]+,\h*)?logfile\h*=\h*(\"|\')?\H+(\"|\')?(,\h*\H+\h*)*\h*(#.*)?$" /etc/sudoers* 2>/dev/null ; echo $?)
+}

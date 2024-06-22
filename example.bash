@@ -19,7 +19,7 @@ chmod +x test/bats/libexec/bats-core/bats*
 chmod +x test/test_helper/bats-*/*.bash
 
 # Section: 1-Initial-Setup
-bats benchmarks/1-Initial-Setup/1.1-Filesystem-Configuration.bats
+bats benchmarks/1-Initial-Setup/1.1-Filesystem-Configuration.bats 
 bats benchmarks/1-Initial-Setup/1.2-Configure-Software-Updates.bats
 bats benchmarks/1-Initial-Setup/1.3-Filesystem-Integrity-Checking.bats
 bats benchmarks/1-Initial-Setup/1.4-Secure-Boot-Settings.bats
@@ -44,7 +44,7 @@ bats benchmarks/4-Logging-and-Auditing/4.1-Configure-System-Accounting-auditd.ba
 bats benchmarks/4-Logging-and-Auditing/4.2-Configure-Logging.bats
 
 # Section: 5-Access-Authentication-and-Authorization
-bats benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-time-based-job-schedulers.bats
+bats benchmarks/5-Access-Authentication-and-Authorization/5.1-Configure-Time-Based-Job-Schedulers.bats
 bats benchmarks/5-Access-Authentication-and-Authorization/5.2-Configure-SSH-Server.bats
 bats benchmarks/5-Access-Authentication-and-Authorization/5.3-Configure-privilege-escalation.bats
 bats benchmarks/5-Access-Authentication-and-Authorization/5.4-Configure-PAM.bats

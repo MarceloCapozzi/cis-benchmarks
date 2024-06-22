@@ -60,7 +60,7 @@ setup() {
 # 5.3.3 Ensure sudo log file exists (Automated)
 @test "5.3.3 Ensure sudo log file exists (Automated)" {
     # verify that sudo has a custom log file configured
-    run bash -c 'grep -rPsiq \"^\h*Defaults\h+([^#]+,\h*)?logfile\h*=\h*(\"|\')?\H+(\"|\')?(,\h*\H+\h*)*\h*(#.*)?$" /etc/sudoers*" 2>/dev/null'
+    run is_sudo_log_file_exists
     assert_success
 }
 
