@@ -46,11 +46,9 @@ function is-network-wireless-disabled() {
         fi
     elif [ -n "$(find /sys/class/net/*/ -type d -name wireless)" ]; then
         t=0
-        mname=$(for driverdir in $(find /sys/class/net/*/ -type d -name wireless | 
-        xargs -0 dirname); do basename "$(readlink -f "$driverdir"/device/driver/module)";done | sort -u)
+        mname=$(for driverdir in $(find /sys/class/net/*/ -type d -name wireless | xargs -0 dirname); do basename "$(readlink -f "$driverdir"/device/driver/module)";done | sort -u)
         for dm in $mname; do
-            if grep -Eq "^\s*install\s+$dm\s+/bin/(true|false)" 
-                /etc/modprobe.d/*.conf; then
+            if grep -Eq "^\s*install\s+$dm\s+/bin/(true|false)" /etc/modprobe.d/*.conf; then
                 /bin/true
             else
                 t=1
